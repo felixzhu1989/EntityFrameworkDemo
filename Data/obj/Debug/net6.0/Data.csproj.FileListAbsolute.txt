@@ -1,0 +1,17 @@
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Data.deps.json
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Data.dll
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Data.pdb
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Domain.dll
+E:\CSharp\repos\EntityFrameworkDemo\Data\bin\Debug\net6.0\Domain.pdb
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.csproj.CopyComplete
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.dll
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\refint\Data.dll
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.pdb
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+E:\CSharp\repos\EntityFrameworkDemo\Data\obj\Debug\net6.0\ref\Data.dll
