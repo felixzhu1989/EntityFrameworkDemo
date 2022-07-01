@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        [Column(TypeName = "date")]//不需要时间，只需要日期
         public DateTime DateOfBirth { get; set; }
 
         //导航属性

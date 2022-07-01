@@ -14,13 +14,26 @@ namespace Data
         public DbSet<League> Leagues { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Club> Clubs { get; set; }
+        //最好是所有表格都设置DbSet属性，这里还会让表名成为属性名，方便以后操作
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<Game> Games { get; set; }
+        //关联表GamePlayer可以不设置DbSet，默认以GamePlayer作为表名
+
+        public DemoContext()
+        {
+            //设置context对所有操作不进行变化追踪
+            //ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+        }
 
         //指定数据库和数据库连接字符串
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //server=.\\SQLEXPRESS;uid=sa;pwd=123456;database=Forum;
+            //示例数据库连接字符串server=.\\SQLEXPRESS;uid=sa;pwd=123456;database=Forum;
+            //.UseLoggerFactory(ConsoleLoggerFactory)是让控制台输出SQL语句的配置
+            //.EnableSensitiveDataLogging()是让SQL语句显示参数的配置
             optionsBuilder
                 .UseLoggerFactory(ConsoleLoggerFactory)
+                .EnableSensitiveDataLogging()
                 .UseSqlServer(@"server=PDMSERVER\SQLEXPRESS;database=DemoDb;uid=sa;pwd=Epdm2018;TrustServerCertificate=true");
 
         }
