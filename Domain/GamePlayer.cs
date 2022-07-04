@@ -19,7 +19,7 @@ namespace Domain
         public int GameId { get; set; }
 
         //导航属性
-        //设置GamePlayer对应多个Game和Player，体现Game和Player多对多的关系
+        //体现Game和Player多对多的关系
         public Game Game { get; set; }
         public Player Player { get; set; }
     }

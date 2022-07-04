@@ -203,11 +203,14 @@ void UpdateTrackingData()
     var league = context.Leagues.First();
     league.Name += "~~";
     //修改多条数据，此处Skip(1)是跳过前面1条数据，Take(2)是取2条数据
+    //Skip和Take通常用于翻页功能
     //var leagues = context.Leagues.Skip(1).Take(2).ToList();
     //foreach (var league in leagues)
     //{
     //    league.Name += "~~";
     //}
+    var count = context.SaveChanges();
+    Console.WriteLine(count);
 }
 //场景二，修改离线的数据
 void UpdateNoTrackingData()
@@ -226,7 +229,7 @@ void UpdateNoTrackingData()
 }
 
 //6.添加关系数据
-//场景一，添加俱乐部和球员，指定联赛
+//场景一，添加俱乐部和球员，指定联赛，使用Add
 void AddClubAndPlayer()
 {
     //添加一个Club俱乐部，应该时添加到一个现有的League联赛中
@@ -260,7 +263,7 @@ void AddClubAndPlayer()
     int count = context.SaveChanges();
     Console.WriteLine(count);
 }
-//场景二，查询俱乐部添加球员
+//场景二，查询俱乐部添加球员，使用Add
 void AddPlayerInClub()
 {
     //查询俱乐部对象，然后对俱乐部中的Players导航集合属性List中添加新建球员对象
@@ -274,7 +277,7 @@ void AddPlayerInClub()
     int count = context.SaveChanges();
     Console.WriteLine(count);
 }
-//场景三，查询俱乐部添加球员，模拟离线数据
+//场景三，查询俱乐部添加球员，模拟离线数据，使用Attach
 void AddPlayerUseAttach()
 {
     var juventus = context.Clubs.SingleOrDefault(x => x.Name == "Juventus");
@@ -536,4 +539,4 @@ void AddOneToOneTrackingAgain()
     context.SaveChanges();
 }
 
-//14.再EFCore中执行原生的SQL语句
+//14.在EFCore中执行原生的SQL语句

@@ -24,7 +24,16 @@ namespace Data
             //设置context对所有操作不进行变化追踪
             //ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
-
+        //使用日志往控制台输出EFCore生成的SQL语句
+        public static readonly ILoggerFactory ConsoleLoggerFactory =
+            LoggerFactory.Create(builder =>
+            {
+                //对日志进行过滤，只输出数据库的执行命令，级别为information
+                builder.AddFilter((category, level) =>
+                        category == DbLoggerCategory.Database.Command.Name
+                        && level == LogLevel.Information)
+                    .AddConsole();
+            });
         //指定数据库和数据库连接字符串
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,14 +58,6 @@ namespace Data
                 .HasForeignKey<Resume>(x => x.PlayerId);
         }
 
-        public static readonly ILoggerFactory ConsoleLoggerFactory =
-            LoggerFactory.Create(builder =>
-            {
-                //对日志进行过滤，只输出数据库的执行命令，级别为information
-                builder.AddFilter((category, level) =>
-                        category == DbLoggerCategory.Database.Command.Name
-                        && level == LogLevel.Information)
-                    .AddConsole();
-            });
+       
     }
 }
