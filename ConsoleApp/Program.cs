@@ -30,7 +30,7 @@ using var context = new DemoContext();
 //场景一，添加俱乐部和球员，指定联赛
 //AddClubAndPlayer();
 //场景二，查询俱乐部添加球员
-//AddPlayerInClub();
+AddPlayerInClub();
 //场景三，查询俱乐部添加球员，模拟离线数据
 //AddPlayerUseAttach();
 //场景四，预先知道球员的Id，给球员添加简历
@@ -70,7 +70,7 @@ using var context = new DemoContext();
 //DeleteMultiToMultiByTwoId();
 
 //12.如何修改多对多关系（中间表）
-UpdateMultiToMulti();
+//UpdateMultiToMulti();
 
 
 
@@ -271,8 +271,10 @@ void AddPlayerInClub()
     var juventus = context.Clubs.SingleOrDefault(x => x.Name == "Juventus");
     juventus.Players.Add(new Player()
     {
-        Name = "Gonzalo Higuain",
-        DateOfBirth = new DateTime(1987, 12, 10)
+        Name = "Michel Platini",
+        DateOfBirth = new DateTime(1955, 6, 21),
+        Gender = Gender_e.Female,
+        Resume = new Resume(){Description = "米歇尔·普拉蒂尼（Michel Platini），1955年6月21日出生于法国洛林，前法国职业足球运动员，被誉为20世纪80年代最出色的中场球员，前任欧足联主席及法国足球总会副会长。" }
     });
     int count = context.SaveChanges();
     Console.WriteLine(count);

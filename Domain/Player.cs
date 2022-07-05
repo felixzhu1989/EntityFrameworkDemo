@@ -16,6 +16,7 @@ namespace Domain
         public string Name { get; set; }
         [Column(TypeName = "date")]//不需要时间，只需要日期
         public DateTime DateOfBirth { get; set; }
+        public Gender_e Gender { get; set; }
 
         //导航属性
         public List<GamePlayer> GamePlayers { get; set; }
