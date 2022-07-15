@@ -30,7 +30,7 @@ using var context = new DemoContext();
 //场景一，添加俱乐部和球员，指定联赛
 //AddClubAndPlayer();
 //场景二，查询俱乐部添加球员
-AddPlayerInClub();
+//AddPlayerInClub();
 //场景三，查询俱乐部添加球员，模拟离线数据
 //AddPlayerUseAttach();
 //场景四，预先知道球员的Id，给球员添加简历
@@ -47,6 +47,8 @@ AddPlayerInClub();
 //QueryConditionOnChildsProperty();
 //场景五，懒加载，Lazy Loading
 //在EFCore中默认是关闭的，但是可以手动开启，容易出问题，不建议使用
+
+QueryFelix();
 
 
 //多对多关系数据：Player<-(一对多)-GamePlayer(中间表)-(一对多)->Game(其中Player与Game形成多对多)
@@ -271,10 +273,11 @@ void AddPlayerInClub()
     var juventus = context.Clubs.SingleOrDefault(x => x.Name == "Juventus");
     juventus.Players.Add(new Player()
     {
-        Name = "Michel Platini",
-        DateOfBirth = new DateTime(1955, 6, 21),
-        Gender = Gender_e.Female,
-        Resume = new Resume(){Description = "米歇尔·普拉蒂尼（Michel Platini），1955年6月21日出生于法国洛林，前法国职业足球运动员，被誉为20世纪80年代最出色的中场球员，前任欧足联主席及法国足球总会副会长。" }
+        Name = "felix",
+        DateOfBirth = new DateTime(1989, 12, 15),
+        Gender = Gender_e.Male,
+        Resume = new Resume(){Description = "测试Role" },
+        Roles = new List<Role>() { new Role() { Name = Role_e.Admin},new Role(){Name = Role_e.Viewer}}
     });
     int count = context.SaveChanges();
     Console.WriteLine(count);
@@ -392,6 +395,17 @@ void QueryConditionOnChildsProperty()
         .Where(x => x.League.Name.Contains("e"))
         .ToList();
 }
+
+
+void QueryFelix()
+{
+    var player = context.Players
+        .Where(x => x.Name.Contains("felix"))
+        .Include(x => x.Roles)
+        .FirstOrDefault();
+    Console.WriteLine(player.Roles[0].Name);
+}
+
 
 //8.加载多对多关系数据
 void QueryMultiToMulti()

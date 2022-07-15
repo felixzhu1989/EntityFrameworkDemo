@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "H8FCjEGaLKwPa39TW+J/LA/FfoL8GcnOtAsocDCdPU1v4NwJAus2iWAeCrU3lpyGLU6du4Ewiiw67Y1IVlT0dA==",
+  "dgSpecHash": "Bcm/C11uUFet9bAmecahIgV6YfLJE/qhSMVfQuiLm3I6usZwfaJg6KbDb7SF4JFyPt1jTrkwFmiU250OUhVtFg==",
   "success": true,
   "projectFilePath": "E:\\CSharp\\repos\\EntityFrameworkDemo\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\felix.zhu\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0-preview.5.22302.2\\microsoft.entityframeworkcore.abstractions.7.0.0-preview.5.22302.2.nupkg.sha512"
+  ],
   "logs": []
 }

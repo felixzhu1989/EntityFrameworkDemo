@@ -743,6 +743,9 @@
         }
       },
       "Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.0-preview.5.22302.2"
+        },
         "runtime": {
           "Domain.dll": {}
         }

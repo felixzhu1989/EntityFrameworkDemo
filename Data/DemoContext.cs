@@ -14,6 +14,7 @@ namespace Data
         public DbSet<League> Leagues { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Club> Clubs { get; set; }
+        public DbSet<Role> Roles { get; set; }
         //最好是所有表格都设置DbSet属性，这里还会让表名成为属性名，方便以后操作
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<Game> Games { get; set; }
